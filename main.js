@@ -23,10 +23,8 @@ function listenToTokens() {
     const normalizedYPos = window.innerHeight * data.y;
 
     moveLandcover(normalizedXPos, normalizedYPos);
+    selectLandcover(data.rotation);
 
-    // moveSVG(normalizedXPos, normalizedYPos);
-    // rotateSVG(data.rotation);
-    // updateText(Math.round(data.rotation));
   });
 }
 
@@ -48,8 +46,47 @@ function moveLandcover(x, y){
   }
 }
 
-function highlightSelection(degrees){
-  //document.select()
+function selectLandcover(degrees){
+  let matches = document.querySelectorAll("li");
+  //console.log(matches[3]);
+  // to-do remove selection
+
+  switch(true) {
+    case degrees < 36:
+      matches[0].classList.add("links__link_selected");
+      break;
+    case degrees < 36*2:
+      matches[1].classList.add("links__link_selected");
+      break;
+    case degrees < 36*3:
+      matches[2].classList.add("links__link_selected");
+      break;
+    case degrees < 36*4:
+      matches[3].classList.add("links__link_selected");
+      break;
+    case degrees < 36*5:
+      matches[4].classList.add("links__link_selected");
+      break;
+    case degrees < 36*6:
+      matches[5].classList.add("links__link_selected");
+      break;
+    case degrees < 36*7:
+      matches[6].classList.add("links__link_selected");
+      break;
+    case degrees < 36*8:
+      matches[7].classList.add("links__link_selected");
+      break;
+    case degrees < 36*9:
+      matches[8].classList.add("links__link_selected");
+      break;
+    default:
+      matches[9].classList.add("links__link_selected");
+      break;
+  }
+
+  
+
+   
 
 }
 
