@@ -30,6 +30,7 @@ body {
 }
 
 .links__list {
+  width: 100%;
   position: relative;
   list-style: none;
 }
