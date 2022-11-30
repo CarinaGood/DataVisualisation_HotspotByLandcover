@@ -22,10 +22,35 @@ function listenToTokens() {
     const normalizedXPos = window.innerWidth * data.x;
     const normalizedYPos = window.innerHeight * data.y;
 
-    moveSVG(normalizedXPos, normalizedYPos);
-    rotateSVG(data.rotation);
-    updateText(Math.round(data.rotation));
+    moveLandcover(normalizedXPos, normalizedYPos);
+
+    // moveSVG(normalizedXPos, normalizedYPos);
+    // rotateSVG(data.rotation);
+    // updateText(Math.round(data.rotation));
   });
+}
+
+function moveLandcover(x, y){
+  let matches = document.querySelectorAll("li");
+  //console.log(matches);
+
+  matches.forEach(
+    function(currentValue){
+      //console.log(currentValue);
+      currentValue.style.left = x + "px";
+      currentValue.style.top = y + "px";
+    }
+  )
+  for (let i = 0; i > matches.length; i++) {
+    console.log(matches[i]);
+    key.style.top = x + "px";
+    key.style.left = y+ "px";
+  }
+}
+
+function highlightSelection(degrees){
+  //document.select()
+
 }
 
 function drawSVG() {
@@ -97,5 +122,5 @@ function rotateSVG(degrees) {
 
 
 //loadData();
-drawSVG();
+//drawSVG();
 listenToTokens();

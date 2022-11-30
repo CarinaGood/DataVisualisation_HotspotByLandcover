@@ -1,30 +1,3 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
-body {
-  background-color: #161841;
-}
-
-svg {
-  width: 100%;
-}
-
-.wheel {
-  width:5em;
-  height:5em;
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.wheel:nth-child(n) {
-
-} */
-
 :root {
   --base-grid: 8px;
   --colour-white: #fff;
@@ -49,11 +22,9 @@ body {
 }
 
 .links {
-  --link-size: calc(var(--base-grid)*20);
+  --link-size: calc(var(--base-grid)*10);
   color: var(--colour-black);
   display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   min-height: 100vh;
 }
@@ -72,8 +43,8 @@ body {
   margin-top: calc(var(--link-size)/-2);
   margin-left: calc(var(--link-size)/-2);
   --angle: calc(360deg/var(--item-total));
-  --rotation: calc(140deg + var(--angle)*var(--item-count));
-  transform: rotate(var(--rotation)) translate(calc(var(--link-size) + var(--base-grid)*20)) rotate(calc(var(--rotation)*-1));
+  --rotation: calc(126deg + var(--angle)*var(--item-count));
+  transform: rotate(var(--rotation)) translate(calc(var(--link-size) + var(--base-grid)*10)) rotate(calc(var(--rotation)*-1));
 }
 
 .links__link {
@@ -94,8 +65,8 @@ body {
 }
 
 .links__icon {
-  width: calc(var(--base-grid)*8);
-  height: calc(var(--base-grid)*8);
+  width: calc(var(--base-grid)*4);
+  height: calc(var(--base-grid)*4);
   transition: all .3s ease-in-out;
   fill: var(--colour-black);
 }
@@ -112,7 +83,7 @@ body {
   animation: text .3s ease-in-out forwards;
 }
 
-.links__link:after {
+.links__link_selected:after {
   content: "";
   background-color: transparent;
   width: var(--link-size);
@@ -123,21 +94,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  transition: all .3s cubic-bezier(.53,-.67,.73,.74);
-  transform: none;
-  opacity: 0;
-}
-
-/* .links__link:hover .links__icon {
-  transition: all .3s ease-in-out;
-  transform: translateY(calc(var(--base-grid)*-1));
-} */
-
-.links__link:hover .links__text {
-  display: block;
-}
-
-.links__link:hover:after {
   transition: all .3s cubic-bezier(.37,.74,.15,1.65);
   transform: scale(1.1);
   opacity: 1;
