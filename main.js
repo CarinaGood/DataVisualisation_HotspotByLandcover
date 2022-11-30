@@ -39,17 +39,17 @@ function moveLandcover(x, y){
       currentValue.style.top = y + "px";
     }
   )
-  for (let i = 0; i > matches.length; i++) {
-    console.log(matches[i]);
-    key.style.top = x + "px";
-    key.style.left = y+ "px";
-  }
 }
 
 function selectLandcover(degrees){
   let matches = document.querySelectorAll("li");
   //console.log(matches[3]);
   // to-do remove selection
+  matches.forEach(
+    function(currentValue){
+      currentValue.classList.remove("links__link_selected");
+    }
+  )
 
   switch(true) {
     case degrees < 36:
