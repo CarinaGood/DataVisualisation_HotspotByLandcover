@@ -26,7 +26,7 @@ body {
 
 
 .links {
-  --link-size: calc(var(--base-grid)*10);
+  --link-size: calc(var(--base-grid)*12);
   display: flex;
   width: 100%;
   min-height: 100%;
@@ -61,8 +61,8 @@ body {
   margin-top: calc(var(--link-size)/-2);
   margin-left: calc(var(--link-size)/-2);
   --angle: calc(360deg/var(--item-total));
-  --rotation: calc(126deg + var(--angle)*var(--item-count));
-  transform: rotate(var(--rotation)) translate(calc(var(--link-size) + var(--base-grid)*10)) rotate(calc(var(--rotation)*-1));
+  --rotation: calc(-50deg + var(--angle)*var(--item-count));
+  transform: rotate(var(--rotation)) translate(calc(var(--link-size) + var(--base-grid)*12)) rotate(calc(var(--rotation)*-1));
 }
 
 .links__link {
