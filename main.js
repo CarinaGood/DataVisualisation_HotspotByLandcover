@@ -1,3 +1,4 @@
+let selected;
 const settings = {
   circleSize: 40,
   strokeWidth: 3,
@@ -7,7 +8,7 @@ const settings = {
 
 function loadData(){
   d3.csv("./data/CarbonPotentialsInHotspots_byLandUse.csv", function(data){
-      console.log(data);
+      //console.log(data);
   }); 
 }
 
@@ -59,61 +60,69 @@ function selectLandcover(degrees, x, y){
     }
   )
 
-  degrees = 36*1-1;
-
   switch(true) {
     case degrees < 36:
+      selected = 0;
       matches[0].classList.add("links__link_selected");
       matches[0].parentElement.style.transformOrigin = `${x}px ${y}px`;
       matches[0].parentElement.style.transform = `rotate(${3*36}deg)`;
       break;
     case degrees < 36*2:
+      selected = 1;
       matches[1].classList.add("links__link_selected");
       matches[0].parentElement.style.transformOrigin = `${x}px ${y}px`;
       matches[0].parentElement.style.transform = `rotate(${2*36}deg)`;
       break;
     case degrees < 36*3:
+      selected = 2;
       matches[2].classList.add("links__link_selected");
       matches[0].parentElement.style.transformOrigin = `${x}px ${y}px`;
       matches[0].parentElement.style.transform = `rotate(${1*36}deg)`;
       break;
     case degrees < 36*4:
+      selected = 3;
       matches[3].classList.add("links__link_selected");
       matches[0].parentElement.style.transformOrigin = `${x}px ${y}px`;
       matches[0].parentElement.style.transform = `rotate(${0*36}deg)`;
       break;
     case degrees < 36*5:
+      selected = 4;
       matches[4].classList.add("links__link_selected");
       matches[0].parentElement.style.transformOrigin = `${x}px ${y}px`;
       matches[0].parentElement.style.transform = `rotate(${9*36}deg)`;
       break;
     case degrees < 36*6:
+      selected = 5;
       matches[5].classList.add("links__link_selected");
       matches[0].parentElement.style.transformOrigin = `${x}px ${y}px`;
       matches[0].parentElement.style.transform = `rotate(${8*36}deg)`;
       break;
     case degrees < 36*7:
+      selected = 6;
       matches[6].classList.add("links__link_selected");
       matches[0].parentElement.style.transformOrigin = `${x}px ${y}px`;
       matches[0].parentElement.style.transform = `rotate(${7*36}deg)`;
       break;
     case degrees < 36*8:
+      selected = 7;
       matches[7].classList.add("links__link_selected");
       matches[0].parentElement.style.transformOrigin = `${x}px ${y}px`;
       matches[0].parentElement.style.transform = `rotate(${6*36}deg)`;
       break;
     case degrees < 36*9:
+      selected = 8;
       matches[8].classList.add("links__link_selected");
       matches[0].parentElement.style.transformOrigin = `${x}px ${y}px`;
       matches[0].parentElement.style.transform = `rotate(${5*36}deg)`;
       break;
     default:
+      selected = 9;
       matches[9].classList.add("links__link_selected");
       matches[0].parentElement.style.transformOrigin = `${x}px ${y}px`;
       matches[0].parentElement.style.transform = `rotate(${4*36}deg)`;
       break;
   }
-
 }
 
 listenToTokens();
+//loadData();
