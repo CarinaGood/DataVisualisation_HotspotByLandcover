@@ -26,8 +26,8 @@ function listenToTokens() {
     //console.log(data.id);
 
     let token = document.querySelector("div.token");
-    token.style.opacity = "0";
-
+    token.remove();
+    
     let landcover = document.querySelector("div.links");
     landcover.style.opacity = "1";
 
